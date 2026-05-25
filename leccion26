@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lección 26 | N4 Speaking & Listening</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4efe6;
+      color: #2b2118;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2b2118, #6b4f35);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 15px auto 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #fff8ef;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      margin: 6px;
+      display: inline-block;
+      text-decoration: none;
+      color: #4a2f1b;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: #eadcc9;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #4a2f1b;
+      border-left: 6px solid #9b6b43;
+      padding-left: 12px;
+    }
+
+    .card {
+      background: #fff8ef;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 18px 0;
+      border: 1px solid #eadcc9;
+    }
+
+    .jp {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #2b2118;
+      margin: 10px 0;
+    }
+
+    .romaji {
+      color: #7a5a3a;
+      font-style: italic;
+    }
+
+    .meaning {
+      color: #555;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 6px;
+      background: #6b4f35;
+      color: white;
+    }
+
+    button:hover {
+      background: #4a2f1b;
+    }
+
+    .mic {
+      background: #9b3d2e;
+    }
+
+    .mic.recording {
+      background: #c0392b;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      padding: 12px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .result {
+      background: #f1f1f1;
+      padding: 12px;
+      border-radius: 12px;
+      min-height: 35px;
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eadcc9;
+      padding: 6px 12px;
+      border-radius: 15px;
+      margin: 4px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b4f35;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Lección 26 | んです</h1>
+  <p>
+    En esta lección practicarás cómo explicar razones, pedir ayuda, pedir consejo
+    y sonar más natural en una conversación japonesa. El enfoque principal será
+    escuchar, repetir y hablar.
+  </p>
+</header>
+
+<nav>
+  <a href="#objetivo">Objetivo</a>
+  <a href="#input">Input auditivo</a>
+  <a href="#gramatica">Gramática</a>
+  <a href="#shadowing">Shadowing</a>
+  <a href="#speaking">Speaking</a>
+  <a href="#roleplay">Roleplay</a>
+  <a href="#evaluacion">Evaluación</a>
+</nav>
+
+<section id="objetivo">
+  <h2>1. Objetivo de aprendizaje</h2>
+  <div class="card">
+    <p>Al terminar esta lección, el alumno podrá:</p>
+    <span class="badge">Explicar razones con んです</span>
+    <span class="badge">Pedir explicación con んですか</span>
+    <span class="badge">Pedir ayuda con ていただけませんか</span>
+    <span class="badge">Pedir consejo con どうしたらいいですか</span>
+    <span class="badge">Responder oralmente durante 1 minuto</span>
+  </div>
+</section>
+
+<section id="input">
+  <h2>2. Input auditivo inicial</h2>
+
+  <div class="card">
+    <p>Escucha la frase y trata de entender la intención.</p>
+    <div class="jp">どうしたんですか。</div>
+    <button onclick="speak('どうしたんですか。')">▶ Escuchar</button>
+    <p class="meaning">Pregunta natural para decir: “¿Qué pasó?” o “¿Qué ocurre?”</p>
+  </div>
+
+  <div class="card">
+    <div class="jp">日本語を勉強しているんです。</div>
+    <button onclick="speak('日本語を勉強しているんです。')">▶ Escuchar</button>
+    <p class="meaning">Explica una razón o da contexto: “Es que estoy estudiando japonés”.</p>
+  </div>
+
+  <div class="card">
+    <div class="jp">すみません、教えていただけませんか。</div>
+    <button onclick="speak('すみません、教えていただけませんか。')">▶ Escuchar</button>
+    <p class="meaning">Forma educada para pedir ayuda: “Disculpe, ¿podría explicarme?”</p>
+  </div>
+</section>
+
+<section id="gramatica">
+  <h2>3. Gramática breve y funcional</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>んです</h3>
+      <p>Se usa para explicar una situación, dar contexto o justificar algo.</p>
+      <div class="jp">忙しいんです。</div>
+      <button onclick="speak('忙しいんです。')">▶ Escuchar</button>
+      <p class="meaning">Es que estoy ocupado.</p>
+    </div>
+
+    <div class="card">
+      <h3>んですか</h3>
+      <p>Se usa para pedir explicación o confirmar una situación.</p>
+      <div class="jp">どこへ行くんですか。</div>
+      <button onclick="speak('どこへ行くんですか。')">▶ Escuchar</button>
+      <p class="meaning">¿A dónde vas? / ¿Por qué vas ahí?</p>
+    </div>
+
+    <div class="card">
+      <h3>どうしたらいいですか</h3>
+      <p>Se usa para pedir consejo.</p>
+      <div class="jp">何をしたらいいですか。</div>
+      <button onclick="speak('何をしたらいいですか。')">▶ Escuchar</button>
+      <p class="meaning">¿Qué debería hacer?</p>
+    </div>
+
+    <div class="card">
+      <h3>ていただけませんか</h3>
+      <p>Se usa para pedir ayuda de forma respetuosa.</p>
+      <div class="jp">もう一度言っていただけませんか。</div>
+      <button onclick="speak('もう一度言っていただけませんか。')">▶ Escuchar</button>
+      <p class="meaning">¿Podría decirlo una vez más?</p>
+    </div>
+  </div>
+</section>
+
+<section id="shadowing">
+  <h2>4. Shadowing: escucha y repite</h2>
+
+  <div class="card">
+    <p>Primero escucha. Después abre el micrófono y repite la frase.</p>
+
+    <div class="jp">明日、試験があるんです。</div>
+    <button onclick="speak('明日、試験があるんです。')">▶ Escuchar</button>
+    <button class="mic" onclick="startRecognition('shadow1', this)">🎤 Repetir</button>
+    <div id="shadow1" class="result"></div>
+  </div>
+
+  <div class="card">
+    <div class="jp">すみません、駅まで行きたいんですが。</div>
+    <button onclick="speak('すみません、駅まで行きたいんですが。')">▶ Escuchar</button>
+    <button class="mic" onclick="startRecognition('shadow2', this)">🎤 Repetir</button>
+    <div id="shadow2" class="result"></div>
+  </div>
+
+  <div class="card">
+    <div class="jp">この漢字が読めないんです。</div>
+    <button onclick="speak('この漢字が読めないんです。')">▶ Escuchar</button>
+    <button class="mic" onclick="startRecognition('shadow3', this)">🎤 Repetir</button>
+    <div id="shadow3" class="result"></div>
+  </div>
+</section>
+
+<section id="speaking">
+  <h2>5. Producción oral guiada</h2>
+
+  <div class="card">
+    <p>Responde oralmente usando <strong>んです</strong>.</p>
+    <div class="jp">どうして日本語を勉強しているんですか。</div>
+    <button onclick="speak('どうして日本語を勉強しているんですか。')">▶ Escuchar pregunta</button>
+    <button class="mic" onclick="startRecognition('speak1', this)">🎤 Responder</button>
+    <div id="speak1" class="result"></div>
+  </div>
+
+  <div class="card">
+    <p>Responde oralmente usando una razón.</p>
+    <div class="jp">どうして忙しいんですか。</div>
+    <button onclick="speak('どうして忙しいんですか。')">▶ Escuchar pregunta</button>
+    <button class="mic" onclick="startRecognition('speak2', this)">🎤 Responder</button>
+    <div id="speak2" class="result"></div>
+  </div>
+
+  <div class="card">
+    <p>Pide ayuda usando <strong>ていただけませんか</strong>.</p>
+    <div class="jp">先生に何をお願いしますか。</div>
+    <button onclick="speak('先生に何をお願いしますか。')">▶ Escuchar pregunta</button>
+    <button class="mic" onclick="startRecognition('speak3', this)">🎤 Responder</button>
+    <div id="speak3" class="result"></div>
+  </div>
+</section>
+
+<section id="roleplay">
+  <h2>6. Roleplay interactivo</h2>
+
+  <div class="card">
+    <h3>Situación 1: Estás perdido</h3>
+    <p>
+      Imagina que estás en Japón y quieres llegar a la estación.
+      Pide ayuda de forma educada.
+    </p>
+    <button onclick="speak('すみません、駅へ行きたいんですが、教えていただけませんか。')">
+      ▶ Modelo
+    </button>
+    <button class="mic" onclick="startRecognition('role1', this)">🎤 Hablar</button>
+    <div id="role1" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h3>Situación 2: No entiendes una palabra</h3>
+    <p>
+      Explica que no entiendes y pide que te expliquen.
+    </p>
+    <button onclick="speak('この言葉がわからないんです。説明していただけませんか。')">
+      ▶ Modelo
+    </button>
+    <button class="mic" onclick="startRecognition('role2', this)">🎤 Hablar</button>
+    <div id="role2" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h3>Situación 3: Tienes un problema</h3>
+    <p>
+      Di cuál es tu problema y pregunta qué deberías hacer.
+    </p>
+    <button onclick="speak('財布をなくしたんです。どうしたらいいですか。')">
+      ▶ Modelo
+    </button>
+    <button class="mic" onclick="startRecognition('role3', this)">🎤 Hablar</button>
+    <div id="role3" class="result"></div>
+  </div>
+</section>
+
+<section id="evaluacion">
+  <h2>7. Evaluación oral de 1 minuto</h2>
+
+  <div class="card">
+    <p>
+      Habla durante un minuto. Debes usar al menos dos de estas estructuras:
+    </p>
+
+    <span class="badge">んです</span>
+    <span class="badge">んですか</span>
+    <span class="badge">どうしたらいいですか</span>
+    <span class="badge">ていただけませんか</span>
+
+    <p><strong>Tema:</strong> Explica por qué estudias japonés y pide un consejo para mejorar.</p>
+
+    <button class="mic" onclick="startRecognitionOneMinute('finalSpeech', this)">
+      🎤 Abrir micrófono por 1 minuto
+    </button>
+
+    <div id="timer" class="result">Tiempo: 60 segundos</div>
+    <div id="finalSpeech" class="result"></div>
+  </div>
+</section>
+
+<footer>
+  Lección 26 | Curso N4 basado en comprensión auditiva y producción oral
+</footer>
+
+<script>
+  function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ja-JP";
+    utterance.rate = 0.85;
+    speechSynthesis.speak(utterance);
+  }
+
+  function startRecognition(outputId, button) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Tu navegador no permite reconocimiento de voz. Usa Google Chrome.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "ja-JP";
+    recognition.interimResults = false;
+    recognition.continuous = false;
+
+    button.classList.add("recording");
+    button.textContent = "🎙️ Escuchando...";
+
+    recognition.start();
+
+    recognition.onresult = function(event) {
+      const transcript = event.results[0][0].transcript;
+      document.getElementById(outputId).innerHTML =
+        "<strong>Tu respuesta:</strong><br>" + transcript;
+    };
+
+    recognition.onerror = function(event) {
+      document.getElementById(outputId).innerHTML =
+        "No se pudo reconocer la voz. Intenta de nuevo.";
+    };
+
+    recognition.onend = function() {
+      button.classList.remove("recording");
+      button.textContent = "🎤 Hablar";
+    };
+  }
+
+  function startRecognitionOneMinute(outputId, button) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Tu navegador no permite reconocimiento de voz. Usa Google Chrome.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "ja-JP";
+    recognition.interimResults = true;
+    recognition.continuous = true;
+
+    let finalTranscript = "";
+    let timeLeft = 60;
+
+    const timerBox = document.getElementById("timer");
+    const outputBox = document.getElementById(outputId);
+
+    button.classList.add("recording");
+    button.textContent = "🎙️ Grabando 1 minuto...";
+    timerBox.textContent = "Tiempo: 60 segundos";
+    outputBox.innerHTML = "";
+
+    recognition.start();
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timerBox.textContent = "Tiempo: " + timeLeft + " segundos";
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        recognition.stop();
+      }
+    }, 1000);
+
+    recognition.onresult = function(event) {
+      let interimTranscript = "";
+
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const text = event.results[i][0].transcript;
+
+        if (event.results[i].isFinal) {
+          finalTranscript += text + " ";
+        } else {
+          interimTranscript += text;
+        }
+      }
+
+      outputBox.innerHTML =
+        "<strong>Tu respuesta:</strong><br>" +
+        finalTranscript +
+        "<span style='color:#777'>" + interimTranscript + "</span>";
+    };
+
+    recognition.onerror = function(event) {
+      outputBox.innerHTML += "<br>No se pudo reconocer una parte del audio.";
+    };
+
+    recognition.onend = function() {
+      clearInterval(countdown);
+      timerBox.textContent = "Tiempo terminado.";
+      button.classList.remove("recording");
+      button.textContent = "🎤 Abrir micrófono por 1 minuto";
+    };
+  }
+</script>
+
+</body>
+</html>
